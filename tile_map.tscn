@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://btxcjuvqp7oue"]
+[gd_scene load_steps=14 format=4 uid="uid://btxcjuvqp7oue"]
 
 [ext_resource type="TileSet" uid="uid://dsgnmjyl2hj7m" path="res://tilemap_foreground.tres" id="1_bebfw"]
 [ext_resource type="Script" path="res://tile_map.gd" id="1_cck1i"]
@@ -30,6 +30,13 @@ gravity = Vector3(0, 10, 0)
 turbulence_noise_strength = 0.1
 turbulence_noise_scale = 1.0
 turbulence_influence_over_life = SubResource("CurveTexture_us5xt")
+collision_mode = 2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pc4n1"]
+polygon = PackedVector2Array(-287, -89, -287, 35, -147, 35, -146, -2, -92, -2, -90, -18, -73, -18, -73, -71, -92, -72, -91, -90)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hupdn"]
+polygon = PackedVector2Array(-287, 91, -162, 91, -161, 74, -73, 73, -73, 109, -55, 109, -55, 127, -37, 127, -37, 145, 19, 145, 19, 127, 89, 127, 89, 145, 145, 145, 145, 128, 163, 127, 163, 91, 181, 91, 181, 55, 233, 55, 233, 73, 287, 73, 287, 109, 323, 109, 323, 341, -287, 341)
 
 [node name="TileMap" type="Node2D"]
 script = ExtResource("1_cck1i")
@@ -67,6 +74,7 @@ tile_map_data = PackedByteArray("AAD4/w8AAAADAAYAAAD4/w4AAAADAAYAAAD4/w0AAAADAAY
 tile_set = ExtResource("1_bebfw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 117)
 zoom = Vector2(5, 5)
 script = ExtResource("3_chn77")
 speed = 150.0
@@ -85,7 +93,6 @@ visibility_rect = Rect2(-1004.81, -1.9552, 3381.37, 6028.49)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights/DirectionalLights"]
 rotation = -0.479966
-scale = Vector2(1, 1)
 energy = 0.1
 range_layer_min = -10
 shadow_enabled = true
@@ -93,7 +100,6 @@ shadow_filter_smooth = 64.0
 
 [node name="DirectionalLight2D2" type="DirectionalLight2D" parent="Lights/DirectionalLights"]
 rotation = -0.479966
-scale = Vector2(1, 1)
 energy = 0.2
 range_layer_max = 10
 range_item_cull_mask = 2
@@ -103,7 +109,6 @@ shadow_item_cull_mask = 2
 
 [node name="DirectionalLight2D3" type="DirectionalLight2D" parent="Lights/DirectionalLights"]
 rotation = -0.479966
-scale = Vector2(1, 1)
 energy = 0.1
 range_layer_min = 5
 range_layer_max = 10
@@ -120,3 +125,11 @@ range_layer_max = -1
 texture = ExtResource("6_ly2x0")
 texture_scale = 0.2
 script = ExtResource("7_r1vd4")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_pc4n1")
+occluder_light_mask = 0
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_hupdn")
+occluder_light_mask = 0
