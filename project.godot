@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="IceCrime"
-run/main_scene="res://tile_map.tscn"
+run/main_scene="res://TileMapTests/tile_map.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Achievements/Conditions/Scripts/": "green",
+"res://Achievements/Data/": "purple",
+"res://Achievements/Scripts/": "green",
+"res://DynamicVariables/Data/": "purple",
+"res://DynamicVariables/Scripts/": "green"
+}
 
 [rendering]
 
