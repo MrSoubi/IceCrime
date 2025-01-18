@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Achievement" load_steps=6 format=3 uid="uid://d2mllvymxbv2y"]
+
+[ext_resource type="Script" path="res://Achievements/Conditions/Scripts/condition.gd" id="1_iqtjy"]
+[ext_resource type="Resource" uid="uid://df3v7wyyshts2" path="res://DynamicVariables/Data/player_death_count.tres" id="2_xy2uh"]
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement.gd" id="2_yuk14"]
+[ext_resource type="Script" path="res://Achievements/Conditions/Scripts/int_condition.gd" id="3_yr804"]
+
+[sub_resource type="Resource" id="Resource_idhns"]
+script = ExtResource("3_yr804")
+dynamic_value = ExtResource("2_xy2uh")
+target_value = 5
+comparator = 0
+
+[resource]
+script = ExtResource("2_yuk14")
+name = "5 death"
+description = "you died 5 times"
+conditions = Array[ExtResource("1_iqtjy")]([SubResource("Resource_idhns")])

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6iwkogbv1k4o"]
+
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement_manager.gd" id="1_xq7ia"]
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement.gd" id="2_hrkfl"]
+[ext_resource type="PackedScene" uid="uid://b6pmf1g6ttmak" path="res://Achievements/label.tscn" id="2_vnix4"]
+[ext_resource type="Resource" uid="uid://cwylwq3nr7abo" path="res://Achievements/Data/PlayerDeath/achievement_player_death_1.tres" id="3_pgpdg"]
+[ext_resource type="Resource" uid="uid://d2mllvymxbv2y" path="res://Achievements/Data/PlayerDeath/achievement_player_death_5.tres" id="4_bs52j"]
+[ext_resource type="Resource" uid="uid://cowh8smlgr8ws" path="res://Achievements/Data/PlayerDeath/achievement_player_death_10.tres" id="5_k8ur3"]
+
+[node name="AchievementManager" type="Node"]
+script = ExtResource("1_xq7ia")
+achievements = Array[ExtResource("2_hrkfl")]([ExtResource("3_pgpdg"), ExtResource("4_bs52j"), ExtResource("5_k8ur3")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
+
+[node name="Label" parent="Control/GridContainer" instance=ExtResource("2_vnix4")]
+layout_mode = 2

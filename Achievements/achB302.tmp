@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6iwkogbv1k4o"]
+
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement_manager.gd" id="1_xq7ia"]
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement.gd" id="2_hrkfl"]
+[ext_resource type="Script" path="res://Achievements/Conditions/float_condition.gd" id="2_uvwj5"]
+[ext_resource type="PackedScene" uid="uid://b6pmf1g6ttmak" path="res://Achievements/label.tscn" id="2_vnix4"]
+[ext_resource type="Script" path="res://Achievements/Conditions/condition.gd" id="3_1o8rp"]
+[ext_resource type="Resource" uid="uid://crs7bx7aq45b0" path="res://DynamicVariables/Data/player_death_count_float.tres" id="4_kbvoy"]
+
+[sub_resource type="Resource" id="Resource_7n3rm"]
+script = ExtResource("2_uvwj5")
+dynamic_value = ExtResource("4_kbvoy")
+target_value = 1.0
+comparator = 0
+
+[sub_resource type="Resource" id="Resource_1ek64"]
+script = ExtResource("2_hrkfl")
+name = "First time ?"
+description = "First time dying ?"
+conditions = Array[ExtResource("3_1o8rp")]([SubResource("Resource_7n3rm")])
+
+[node name="AchievementManager" type="Node"]
+script = ExtResource("1_xq7ia")
+achievements = Array[ExtResource("2_hrkfl")]([SubResource("Resource_1ek64")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
+
+[node name="Label" parent="Control/GridContainer" instance=ExtResource("2_vnix4")]
+layout_mode = 2

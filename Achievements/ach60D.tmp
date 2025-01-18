@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6iwkogbv1k4o"]
+
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement_manager.gd" id="1_xq7ia"]
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement.gd" id="2_hrkfl"]
+[ext_resource type="PackedScene" uid="uid://b6pmf1g6ttmak" path="res://Achievements/label.tscn" id="2_vnix4"]
+[ext_resource type="Resource" uid="uid://rtc1pi8treda" path="res://Achievements/Data/PlayerDeath/player_death_count_1.tres" id="3_y1y2e"]
+[ext_resource type="Resource" uid="uid://c5km6tfi2w0vi" path="res://Achievements/Data/PlayerDeath/player_death_count_5.tres" id="4_0scqs"]
+[ext_resource type="Resource" uid="uid://ccfyhh3k6y8li" path="res://Achievements/Data/PlayerDeath/player_death_count_10.tres" id="5_bgmn8"]
+[ext_resource type="Resource" uid="uid://dyws8t5u1v4pf" path="res://Achievements/Data/PlayerDeath/player_death_count_25.tres" id="6_33463"]
+[ext_resource type="Resource" uid="uid://bdeo86e1wcyfd" path="res://Achievements/Data/PlayerDeath/player_death_count_50.tres" id="7_cciqq"]
+
+[node name="AchievementManager" type="Node"]
+script = ExtResource("1_xq7ia")
+achievements = Array[ExtResource("2_hrkfl")]([ExtResource("3_y1y2e"), ExtResource("4_0scqs"), ExtResource("5_bgmn8"), ExtResource("6_33463"), ExtResource("7_cciqq")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
+
+[node name="Label" parent="Control/GridContainer" instance=ExtResource("2_vnix4")]
+layout_mode = 2

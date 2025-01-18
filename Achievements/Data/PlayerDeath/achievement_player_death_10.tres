@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Achievement" load_steps=6 format=3 uid="uid://cowh8smlgr8ws"]
+
+[ext_resource type="Script" path="res://Achievements/Conditions/Scripts/condition.gd" id="1_vnowh"]
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement.gd" id="2_skdvj"]
+[ext_resource type="Resource" uid="uid://df3v7wyyshts2" path="res://DynamicVariables/Data/player_death_count.tres" id="2_ugbfx"]
+[ext_resource type="Script" path="res://Achievements/Conditions/Scripts/int_condition.gd" id="3_vyiuh"]
+
+[sub_resource type="Resource" id="Resource_5q78q"]
+script = ExtResource("3_vyiuh")
+dynamic_value = ExtResource("2_ugbfx")
+target_value = 10
+comparator = 0
+
+[resource]
+script = ExtResource("2_skdvj")
+name = "What are you doing ?"
+description = "You died 10 times."
+conditions = Array[ExtResource("1_vnowh")]([SubResource("Resource_5q78q")])

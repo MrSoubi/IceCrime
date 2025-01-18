@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Achievement" load_steps=6 format=3 uid="uid://cwylwq3nr7abo"]
+
+[ext_resource type="Script" path="res://Achievements/Conditions/Scripts/condition.gd" id="1_s022v"]
+[ext_resource type="Resource" uid="uid://df3v7wyyshts2" path="res://DynamicVariables/Data/player_death_count.tres" id="2_5s38b"]
+[ext_resource type="Script" path="res://Achievements/Scripts/achievement.gd" id="2_k0c38"]
+[ext_resource type="Script" path="res://Achievements/Conditions/Scripts/int_condition.gd" id="3_2tauw"]
+
+[sub_resource type="Resource" id="Resource_dedc1"]
+script = ExtResource("3_2tauw")
+dynamic_value = ExtResource("2_5s38b")
+target_value = 1
+comparator = 0
+
+[resource]
+script = ExtResource("2_k0c38")
+name = "First time ?"
+description = "You died for the first time."
+conditions = Array[ExtResource("1_s022v")]([SubResource("Resource_dedc1")])

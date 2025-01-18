@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="DynamicInt" load_steps=2 format=3 uid="uid://df3v7wyyshts2"]
+
+[ext_resource type="Script" path="res://DynamicVariables/Scripts/dynamic_int.gd" id="1_73eqv"]
+
+[resource]
+script = ExtResource("1_73eqv")
