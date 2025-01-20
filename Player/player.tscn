@@ -23,6 +23,8 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dklpy")
+SPEED = 200.0
+JUMP_VELOCITY = -500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c705cfemt7pmn"]
+
+[sub_resource type="Curve" id="Curve_qgvhf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.254144, 0.145085), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_us5xt"]
+curve = SubResource("Curve_qgvhf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_owry3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+direction = Vector3(1, 1, 0)
+spread = 0.0
+initial_velocity_min = 26.46
+initial_velocity_max = 45.86
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 21.16
+gravity = Vector3(0, 10, 0)
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
+turbulence_influence_over_life = SubResource("CurveTexture_us5xt")
+collision_mode = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+position = Vector2(0, -207)
+amount = 5000
+process_material = SubResource("ParticleProcessMaterial_owry3")
+lifetime = 30.0
+preprocess = 30.0
+visibility_rect = Rect2(-1004.81, -1.9552, 3381.37, 6028.49)
