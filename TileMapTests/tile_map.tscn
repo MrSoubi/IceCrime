@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://btxcjuvqp7oue"]
+[gd_scene load_steps=9 format=4 uid="uid://btxcjuvqp7oue"]
 
 [ext_resource type="TileSet" uid="uid://dsgnmjyl2hj7m" path="res://TileMapTests/tilemap_foreground.tres" id="1_bebfw"]
 [ext_resource type="TileSet" uid="uid://cpqf7i1fh22nd" path="res://TileMapTests/tilemap_landscape.tres" id="2_7fk8a"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dribtgrpq85aq" path="res://TileMapTests/tilemap_background.tres" id="3_lr6ro"]
 [ext_resource type="Texture2D" uid="uid://bgy1nitimxxsc" path="res://TileMapTests/light_texture.png" id="6_ly2x0"]
 [ext_resource type="Script" path="res://TileMapTests/point_light_2d.gd" id="7_r1vd4"]
+[ext_resource type="PackedScene" uid="uid://cv38loorlyawe" path="res://UI_Test/control.tscn" id="8_mksil"]
 [ext_resource type="PackedScene" uid="uid://sxdd7a36rieq" path="res://Player/player.tscn" id="9_l48wo"]
 
 [node name="LevelTemplate" type="Node2D"]
@@ -81,6 +82,7 @@ tile_set = ExtResource("3_635s3")
 
 [node name="Parallax_ForeGround" type="ParallaxBackground" parent="GridMap"]
 layer = 5
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="GridMap/Parallax_ForeGround"]
 
@@ -97,3 +99,11 @@ position = Vector2(223, -87)
 player_id = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" parent="." instance=ExtResource("8_mksil")]
+visible = false
+z_index = 1000
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
